@@ -1,3 +1,5 @@
 # 3D Sandbox
-## Built in Godot
-A game inspired by Garry's Mod. It's basically a testing grounds for my game mechanics ideas, and anything I want to make :D
+#### Built in Godot
+
+A game inspired by Garry's Mod. It's basically a testing grounds for my game mechanics ideas, and anything I want to make.
+Feel free to request features! The original, uncompiled project will be uploaded shortly.
