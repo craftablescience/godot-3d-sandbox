@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="3D Demo"
+config/name="3D Sandbox"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
