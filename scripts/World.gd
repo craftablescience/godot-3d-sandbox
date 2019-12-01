@@ -56,12 +56,6 @@ func _process(delta : float) -> void:
 		Player.set_pos(playerpos)
 		Player.set_rotation(playerrot)
 
-# HTML5 ONLY
-func _input(ev) -> void:
-	if ev is InputEventMouseButton:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-# HTML5 ONLY
-
 	"""# !TODO!
 	if Input.is_action_just_pressed("debug_noclip_swap"):
 		if CURRENT_PLAYER == PLAYER_TYPES.player:
