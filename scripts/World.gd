@@ -37,7 +37,7 @@ func _ready() -> void:
 func _process(delta : float) -> void:
 	if Input.is_action_pressed("ui_exit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().quit()
+		get_tree().change_scene("res://scenes/MainMenu.tscn") # TODO: Add pause menu
 	
 	if (Pickup.PLAYER_IN_CAB and Pickup.ENABLED) and (Player.get_parent().name != "Pickup"):
 		var playerrot : Vector3 = Player.get_global_transform().basis.get_euler()

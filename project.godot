@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="3D Demo"
-run/main_scene="res://scenes/World.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [debug]
@@ -28,6 +28,7 @@ settings/fps/force_fps=60
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
+window/size/borderless=true
 window/size/fullscreen=true
 
 [input]
@@ -105,4 +106,5 @@ movement_interact={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.223529, 0.313726, 0.333333, 1 )
 environment/default_environment="res://default_env.tres"
