@@ -81,6 +81,8 @@ func _physics_process(delta : float) -> void:
 		steering = steer_angle
 	else:
 		brake = brake_val * MAX_BRAKE_FORCE / 2
+		steering = 0.0
+		engine_force = 0.0
 
 func _on_PlayerButton_body_entered(body : Node):
 	if body.is_in_group("Players"):

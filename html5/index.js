@@ -102,6 +102,7 @@ var Module=typeof Module!=="undefined"?Module:{};var moduleOverrides={};var key;
 			return new Promise(function(resolve, reject) {
 				rtenvProps.onRuntimeInitialized = resolve;
 				rtenvProps.onAbort = reject;
+				rtenvProps.thisProgram = executableName;
 				rtenvProps.engine.rtenv = Engine.RuntimeEnvironment(rtenvProps, LIBS);
 			});
 		}
@@ -138,13 +139,11 @@ var Module=typeof Module!=="undefined"?Module:{};var moduleOverrides={};var key;
 			);
 		};
 
-		this.startGame = function(mainPack) {
+		this.startGame = function(execName, mainPack) {
 
-			executableName = getBaseName(mainPack);
-			var mainArgs = [];
-			if (!getPathLeaf(mainPack).endsWith('.pck')) {
-				mainArgs = ['--main-pack', getPathLeaf(mainPack)];
-			}
+			executableName = execName;
+			var mainArgs = [ '--main-pack', mainPack ];
+
 			return Promise.all([
 				// Load from directory,
 				this.init(getBasePath(mainPack)),
@@ -194,8 +193,6 @@ var Module=typeof Module!=="undefined"?Module:{};var moduleOverrides={};var key;
 			}
 			this.rtenv.locale = this.rtenv.locale.split('.')[0];
 			this.rtenv.resizeCanvasOnStart = resizeCanvasOnStart;
-
-			this.rtenv.thisProgram = executableName || getBaseName(basePath);
 
 			preloadedFiles.forEach(function(file) {
 				var dir = LIBS.PATH.dirname(file.path);
