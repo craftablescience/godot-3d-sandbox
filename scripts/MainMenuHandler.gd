@@ -1,5 +1,6 @@
 extends Control
 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$HBoxContainer/VBoxContainer2/ProgressBar.hide() # TODO
