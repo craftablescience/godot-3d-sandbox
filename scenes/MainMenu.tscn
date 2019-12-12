@@ -22,17 +22,24 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 120.0
-margin_top = 340.0
-margin_right = -120.0
-margin_bottom = -120.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 80.0
+margin_top = 272.0
+margin_right = 1808.0
+margin_bottom = 944.0
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_right = 1680.0
-margin_bottom = 115.0
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 900.0
+margin_bottom = 672.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 900, 400 )
+alignment = 1
+
+[node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 153.0
+margin_right = 900.0
+margin_bottom = 268.0
 custom_fonts/font = ExtResource( 3 )
 text = "START"
 flat = true
@@ -41,16 +48,16 @@ align = 0
 script = ExtResource( 4 )
 scene_to_load = "res://scenes/World.tscn"
 
-[node name="Spacer" type="TextureRect" parent="VBoxContainer"]
-margin_top = 119.0
-margin_right = 1680.0
-margin_bottom = 247.0
+[node name="Spacer" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_top = 272.0
+margin_right = 900.0
+margin_bottom = 400.0
 texture = ExtResource( 5 )
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-margin_top = 251.0
-margin_right = 1680.0
-margin_bottom = 366.0
+[node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 404.0
+margin_right = 900.0
+margin_bottom = 519.0
 custom_fonts/font = ExtResource( 3 )
 text = "QUIT"
 flat = true
@@ -58,3 +65,28 @@ clip_text = true
 align = 0
 script = ExtResource( 4 )
 scene_to_load = "QUIT"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 904.0
+margin_right = 1704.0
+margin_bottom = 672.0
+rect_min_size = Vector2( 800, 400 )
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 225.0
+margin_right = 800.0
+margin_bottom = 334.0
+custom_fonts/font = ExtResource( 3 )
+text = "        Loading..."
+uppercase = true
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 338.0
+margin_right = 800.0
+margin_bottom = 447.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = ExtResource( 3 )
+step = 1.0
+value = 50.0
+rounded = true
