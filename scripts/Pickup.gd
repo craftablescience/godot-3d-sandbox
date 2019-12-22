@@ -4,9 +4,9 @@ extends VehicleBody
 ############################################################
 # behaviour values
 
-export var MAX_ENGINE_FORCE : float = 200.0
-export var MAX_BRAKE_FORCE : float = 10.0
-export var MAX_STEER_ANGLE : float = 0.5
+export var MAX_ENGINE_FORCE : float = 1000.0
+export var MAX_BRAKE_FORCE : float = 100.0
+export var MAX_STEER_ANGLE : float = 0.6
 
 export var steer_speed : float = 5.0
 

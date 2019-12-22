@@ -5,10 +5,10 @@ export var SPEED_RUN := 16.0
 export var SPEED := 8.0
 export var SPEED_WALK := 4.0
 export var SPEED_CROUCH := 1
-export var SPEED_JUMP := 8.0
+export var SPEED_JUMP := 16.0
 export var SENSITIVITY := 0.1
 
-var gravity := Vector3.DOWN * 9.8
+var gravity := Vector3.DOWN * 32.0
 var velocity := Vector3()
 var spin := 0.1
 var can_jump := false
@@ -97,7 +97,7 @@ func _input(event) -> void:
 		rotation_helper.rotate_x(deg2rad(event.relative.y * SENSITIVITY * -1))
 		self.rotate_y(deg2rad(event.relative.x * SENSITIVITY * -1))
 		var camera_rot := rotation_helper.rotation_degrees
-		camera_rot.x = clamp(camera_rot.x, -70, 70)
+		camera_rot.x = clamp(camera_rot.x, -90, 90)
 		rotation_helper.rotation_degrees = camera_rot
 
 func set_available_input(b : bool) -> void:
